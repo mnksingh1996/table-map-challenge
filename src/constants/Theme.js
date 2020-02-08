@@ -14,7 +14,7 @@ const colors = {
 
 const theme = {
   primary: { ...colors },
-  secondary: { ...colors }
+  secondary: { ...colors, dark__grey: "#000000" }
 };
 
 export default theme;
