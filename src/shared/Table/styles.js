@@ -15,12 +15,12 @@ const cellPadding = css`
 
 // Table Start
 
-export const TableContainer = styled.div`
-  width: 100%;
+export const TableWrapper = styled.div`
+  width: 48%;
 `;
 
 export const Table = styled.table`
-  width: 50%;
+  width: 100%;
   margin-top: 20px;
   text-align: left;
   ${border_collapse};

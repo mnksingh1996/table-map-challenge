@@ -13,8 +13,15 @@ const colors = {
 };
 
 const theme = {
-  primary: { ...colors },
-  secondary: { ...colors, dark__grey: "#000000" }
+  light: { ...colors },
+  dark: {
+    ...colors,
+    light__yellow: colors.light__green,
+    light__green: colors.light__yellow,
+    sea__green: colors.medium__green,
+    medium__green: colors.sea__green,
+    dark__yellow: colors.sea__green
+  }
 };
 
 export default theme;

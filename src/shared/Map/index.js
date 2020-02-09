@@ -3,9 +3,9 @@ import GoogleMapReact from "google-map-react";
 
 import Sprite from "../../assets/sprite.svg";
 
-const Marker = ({ text }) => (
-  <div>
-    {text}
+const Marker = ({ text, tooltip, region }) => (
+  <div title={tooltip}>
+    {text} ({region})
     <svg fill="red">
       <use xlinkHref={`${Sprite}#icon-location2`} />
     </svg>
@@ -21,7 +21,8 @@ class MapComponent extends Component {
     zoom: 11,
     options: {
       styles: {}
-    }
+    },
+    table_data: []
   };
 
   render() {
@@ -33,7 +34,18 @@ class MapComponent extends Component {
           defaultZoom={this.props.zoom}
           options={this.props.options}
         >
-          <Marker lat={28.7041} lng={77.1025} text="Delhi Marker" />
+          {this.props.table_data.map(data =>
+            data.data.map(item => (
+              <Marker
+                key={item.id}
+                lat={item.lat}
+                lng={item.lng}
+                region={data.meta.region}
+                text={item.name}
+                tooltip={item.volume}
+              />
+            ))
+          )}
         </GoogleMapReact>
       </div>
     );
