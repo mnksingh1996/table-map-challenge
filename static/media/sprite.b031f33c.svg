@@ -16,5 +16,9 @@
 <title>menu</title>
 <path d="M2 6h28v6h-28zM2 14h28v6h-28zM2 22h28v6h-28z"></path>
 </symbol>
+<symbol id="icon-arrow-left" viewBox="0 0 32 32">
+<title>arrow-left</title>
+<path d="M1 16l15 15v-9h16v-12h-16v-9z"></path>
+</symbol>
 </defs>
 </svg>
