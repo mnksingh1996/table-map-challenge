@@ -69,7 +69,7 @@ class TableComponent extends Component {
   };
 
   clearSelected = () => {
-    const { all_table_data, table_data, meta, setTableData } = this.props;
+    const { all_table_data, meta, setTableData } = this.props;
 
     const tableIndex = all_table_data.findIndex(
       data => data.meta.id === meta.id
