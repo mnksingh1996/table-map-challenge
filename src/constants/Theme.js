@@ -9,7 +9,8 @@ const colors = {
   light__yellow: "#fff8e5",
   black: "#1f1f1f",
   dark__blue: "#0079d6",
-  light__blue: "#7fbce9"
+  light__blue: "#7fbce9",
+  white: "#ffffff"
 };
 
 const theme = {
@@ -20,7 +21,11 @@ const theme = {
     light__green: colors.light__yellow,
     sea__green: colors.medium__green,
     medium__green: colors.sea__green,
-    dark__yellow: colors.sea__green
+    dark__yellow: colors.sea__green,
+    dark__blue: colors.light__blue,
+    light__blue: colors.dark__blue,
+    white: colors.black,
+    black: colors.white
   }
 };
 

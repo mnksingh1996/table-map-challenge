@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 
 import uuid from "uuid/v4";
@@ -11,7 +11,14 @@ import TableComponent from "../shared/Table";
 import GlobalStyles from "../constants/GlobalStyles";
 import MapDarkStyle from "../constants/MapDarkStyle";
 
-import { Header, Main, Footer, Nav, TableContainer } from "./styles";
+import {
+  Header,
+  Main,
+  Footer,
+  Nav,
+  TableContainer,
+  AddTableButton
+} from "./styles";
 
 import Sprite from "../assets/sprite.svg";
 
@@ -61,22 +68,43 @@ const dummy_data = () => ({
 const initial_table_data = [dummy_data()];
 
 function App() {
+  const navRef = useRef(null);
+
   const [current_theme, setTheme] = useState(theme_options[0]);
   const [table_data, setTableData] = useState(initial_table_data);
   const [show_menu, setShowMenu] = useState(false);
+
+  const handleClickOutside = event => {
+    if (navRef && !navRef.current.contains(event.target)) {
+      setShowMenu(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.addEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <ThemeProvider theme={Theme[current_theme]}>
       <GlobalStyles />
 
       <Header>
-        <svg>
+        <svg onClick={() => setShowMenu(true)}>
           <use xlinkHref={`${Sprite}#icon-menu`} />
         </svg>
       </Header>
 
-      <Nav show={show_menu} onClick={() => setShowMenu(true)}>
-        <button onClick={() => setShowMenu(false)}>Back</button>
+      <Nav show={show_menu} ref={navRef}>
+        <button onClick={() => setShowMenu(false)}>
+          <svg>
+            <use xlinkHref={`${Sprite}#icon-arrow-left`} />
+          </svg>
+          BACK
+        </button>
       </Nav>
       <Main>
         <MapComponent
@@ -92,12 +120,12 @@ function App() {
 
         <br />
 
-        <button
+        <AddTableButton
           type="button"
           onClick={() => setTableData([...table_data, dummy_data()])}
         >
           Add Table
-        </button>
+        </AddTableButton>
 
         <br />
 

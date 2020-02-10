@@ -8,7 +8,8 @@ import {
   TableHead,
   TableBody,
   TableHeadCell,
-  TableCell
+  TableCell,
+  PreTableContent
 } from "./styles";
 
 class TableComponent extends Component {
@@ -103,15 +104,16 @@ class TableComponent extends Component {
 
     return (
       <TableWrapper>
-        <div>
+        <PreTableContent>
           <input
             value={meta.region}
+            placeholder="Enter your region"
             onChange={e => this.handleChange(e, "region", null, "meta")}
           />
           <button type="button" onClick={this.clearSelected}>
             Delete Selected
           </button>
-        </div>
+        </PreTableContent>
 
         <Table>
           <TableHead>

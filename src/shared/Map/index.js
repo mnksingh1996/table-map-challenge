@@ -1,15 +1,19 @@
 import React, { Component } from "react";
 import GoogleMapReact from "google-map-react";
 
+import { Pin } from "./styles";
+
 import Sprite from "../../assets/sprite.svg";
 
 const Marker = ({ text, tooltip, region }) => (
-  <div title={tooltip}>
-    {text} ({region})
-    <svg fill="red">
+  <Pin title={tooltip}>
+    <p>
+      {text} ({region})
+    </p>
+    <svg>
       <use xlinkHref={`${Sprite}#icon-location2`} />
     </svg>
-  </div>
+  </Pin>
 );
 
 class MapComponent extends Component {

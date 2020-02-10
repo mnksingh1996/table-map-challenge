@@ -5,6 +5,7 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     margin: 0;
     box-sizing: inherit;
+    font-family: 'Lato', sans-serif;
   }
 
   body {
