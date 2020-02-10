@@ -28,28 +28,32 @@ const dummy_data = () => ({
       lat: 28.7041,
       lng: 77.1025,
       volume: "delhi volume",
-      name: "Delhi"
+      name: "Delhi",
+      disabled: false
     },
     {
       id: uuid(),
       lat: 28.4595,
       lng: 77.0266,
       volume: "gurgaon volume",
-      name: "Gurgaon"
+      name: "Gurgaon",
+      disabled: false
     },
     {
       id: uuid(),
       lat: 28.5355,
       lng: 77.391,
       volume: "noida volume",
-      name: "Noida"
+      name: "Noida",
+      disabled: false
     },
     {
       id: uuid(),
       lat: 28.4089,
       lng: 77.3178,
       volume: "faridabad volume",
-      name: "faridabad"
+      name: "faridabad",
+      disabled: false
     }
   ]
 });

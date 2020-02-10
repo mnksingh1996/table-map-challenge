@@ -53,6 +53,13 @@ export const TableHeadCell = styled.th`
 export const TableCell = styled.td`
   ${border_collapse};
   ${cellPadding};
+
+  .two {
+    display: flex;
+    input:first-child {
+      margin-right: 10px;
+    }
+  }
 `;
 
 // Table End
