@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/table-map-challenge/precache-manifest.3423e220d709692f601353ec4af1440f.js"
+  "/table-map-challenge/precache-manifest.9e5b6b3f3787df1b8e288883440e0f47.js"
 );
 
 self.addEventListener('message', (event) => {
