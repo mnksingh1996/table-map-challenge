@@ -118,10 +118,10 @@ class TableComponent extends Component {
         <Table>
           <TableHead>
             <Row>
-              <TableHeadCell></TableHeadCell>
+              <TableHeadCell>Disabled</TableHeadCell>
 
               <TableHeadCell>Name</TableHeadCell>
-              <TableHeadCell>Long/Lat</TableHeadCell>
+              <TableHeadCell>Latitude / Longitude</TableHeadCell>
               <TableHeadCell>Volume</TableHeadCell>
             </Row>
           </TableHead>

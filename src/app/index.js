@@ -5,8 +5,8 @@ import uuid from "uuid/v4";
 
 import Theme from "../constants/Theme";
 
-import MapComponent from "../shared/Map";
-import TableComponent from "../shared/Table";
+import MapComponent from "../shared/map";
+import TableComponent from "../shared/table";
 
 import GlobalStyles from "../constants/GlobalStyles";
 import MapDarkStyle from "../constants/MapDarkStyle";

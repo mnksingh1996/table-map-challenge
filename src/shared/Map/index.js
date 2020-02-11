@@ -39,16 +39,18 @@ class MapComponent extends Component {
           options={this.props.options}
         >
           {this.props.table_data.map(data =>
-            data.data.map(item => (
-              <Marker
-                key={item.id}
-                lat={item.lat}
-                lng={item.lng}
-                region={data.meta.region}
-                text={item.name}
-                tooltip={item.volume}
-              />
-            ))
+            data.data
+              .filter(item => !item.disabled)
+              .map(item => (
+                <Marker
+                  key={item.id}
+                  lat={item.lat}
+                  lng={item.lng}
+                  region={data.meta.region}
+                  text={item.name}
+                  tooltip={item.volume}
+                />
+              ))
           )}
         </GoogleMapReact>
       </div>
